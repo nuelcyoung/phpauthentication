@@ -12,6 +12,20 @@ if(isset($_POST['login'])){
         }
     } 
 }
+if(isset($_POST['forgot'])){
+    $user_name = $_POST['user_name'];
+    $password = $_POST['password'];
+    $myfile = file_get_contents("files/user.json"); 
+    $json = json_decode($myfile, true);
+
+    foreach ($json as &$val) {
+        if($val['user_name'] == $user_name){
+            $val['password'] = $password;
+        }
+            echo "Updated ". $user_name;
+    }
+    file_put_contents("files/user.json",json_encode($json));
+}
 
 if(isset($_POST['register'])){
     $first_name =   $_POST['first_name'];
