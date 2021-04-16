@@ -11,7 +11,7 @@
 <input type="date" name="dob" placeholder="Date of Birth">
 <input type="text" name="user_name" placeholder="Username">
 <input type="password" name="password" placeholder="Password">
-<input type="submit" name="submit">
+<input type="submit" name="register">
 </form>
 </body>
 </html>
